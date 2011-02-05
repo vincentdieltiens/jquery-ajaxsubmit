@@ -1,0 +1,23 @@
+This jQuery plugin lets you create ajax form simply.
+
+To use it, just create the HTML form tag, include the plugin and call it on one or more forms.
+
+Example : 
+
+<form id="form" action="/my/url/" method="POST">
+	...
+</form>
+
+$(document).ready(function(){
+	$('#form').ajaxsubmit({
+		success: function(data) {
+			// do some stuff with reponse data
+		},
+		error: function(xhr, error) {
+			// do something on error
+		}
+	});
+});
+
+The parameter given is an object, with options. They are the same options that for $.ajax() and one more called "live".
+When "live" option is true (default false), the plugin uses the "live" jQuery method to bind the handler on the "submit" event.
