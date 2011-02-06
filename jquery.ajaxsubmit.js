@@ -44,7 +44,8 @@
 				type : (options.type != null) ? options.type : $form.attr('method'),
 				data :  (options.data != null) ? options.data : $form.serialize()
 			}
-			var optionsCopy = $.extend(options, addOptions);
+			
+			var optionsCopy = $.extend({}, options, addOptions);
 			
 			$.ajax(optionsCopy);
 		}
